@@ -1,0 +1,87 @@
+////
+/// @group Settings
+/// @author IntegerEleven
+////
+
+/// The responsive font system is a document level implementation allowing
+/// `font-sizes` to grow based on the viewport. As all `font-size` values used
+/// in z11 are enforced to be `rem` units by default, applying `rfs` at the
+/// document level propogates through all other `font-size` variant styles.
+/// 
+/// The `clamp()` function is used to provide rfs, and it provides a fallback
+/// to a static `1rem` base `font-size` if input is invalid, or the `clamp()`
+/// function is not supported.
+///
+/// Whether to enable the responsive font system.
+$z-setting-rfs-enable: true;
+
+/// The `clamp()` function accepts three parameters, in order these are `min`,
+/// `preferred`, and `max`. In the `clamp()` function, this setting is the
+/// second, or preferred, parameter. The `min` will be the `$z-setting-fs-base`
+/// value and the `max` will be the `$z-setting-fs-lg` value. With these
+/// settings, `rfs` will always try to be the preferred value, but is 
+/// constrained by the `min` and `max`.
+///
+/// In the example below, `rfs` will attempt to have a document level
+/// `font-size` of `2vw`, but when calculated will never be larger than `2rem`
+/// or smaller than `1.5rem` when those values are calculated.
+///
+/// @example scss
+///   $z-setting-fs-base: 1.5rem;
+///   $z-setting-fs-lg: 2rem;
+///   $z-setting-rfs-enable: true;
+///   $z-setting-rfs-value: 2vw;
+///   // will result in 
+///   font-size: 1rem;
+///   font-size: clamp(1.5rem, 2vw, 2rem);
+$z-setting-rfs-value: 2vw;
+
+
+//  Font sizes
+$z-setting-fs-xs: 0.625rem !default;
+$z-setting-fs-sm: 0.8571rem !default;
+$z-setting-fs-md: 1rem !default;
+$z-setting-fs-lg: 1.1429rem !default;
+$z-setting-fs-xl: 1.2857rem !default;
+$z-setting-fs-xxl: 1.5714rem !default;
+$z-setting-fs-3xl: 1.8571rem !default;
+$z-setting-fs-4xl: 2.2857rem !default;
+$z-setting-fs-5xl: 3rem !default;
+$z-setting-fs-6xl: 4rem !default;
+
+//  Font families
+$z-setting-ff-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !default;
+$z-setting-ff-heading: inherit !default;
+$z-setting-ff-monospace: Consolas, "Andale Mono WT", "Andale Mono",
+  "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono",
+  "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco,
+  "Courier New", Courier, monospace !default;
+
+//  Font weights
+$z-setting-fw-heading: 100 !default;
+$z-setting-fw-bold: 500 !default;
+$z-setting-fw-strong: 700 !default;
+
+//  Alignment consistency
+$z-setting-dir: left !default;
+$z-setting-v-rhythm: 1rem !default;
+$z-setting-lh-base: 1.5 !default;
+$z-setting-lh-heading: 1.5 !default;
+$z-setting-inline-padding: 0.125rem !default;
+$z-setting-block-padding: 0.5rem !default;
+
+//  List styles
+$z-setting-list-ol: decimal lower-alpha lower-roman !default;
+$z-setting-list-ul: disc circle square !default;
+$z-setting-list-fixed: true; 
+
+//  Transition
+$z-setting-ts-duration: 200ms !default;
+$z-setting-ts-function: ease-in-out !default;
+$z-setting-ts-delay: 0s !default;
+
+//  Rounded corners
+$z-setting-rounded-sm: 0.125rem !default;
+$z-setting-rounded-md: 0.25rem !default;
+$z-setting-rounded-lg: 0.5rem !default;

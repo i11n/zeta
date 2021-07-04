@@ -1,0 +1,90 @@
+@mixin make-heading($level, $fs, $sub-fs: 0) {
+  $heading: ".z-title";
+  $section: "";
+
+  @if $level > 0 {
+    $heading: "h" + $level;
+  }
+
+  $level: $level + 1;
+
+  $subheader: "h" + $level;
+
+  @if $level == 7 {
+    $subheader: "p";
+  }
+
+  #{$heading} {
+    @if $level == 1 {
+      display: block;
+    }
+
+    @include v-rhythm();
+
+    font-size: $fs;
+    font-weight: $z-setting-fw-heading;
+    font-family: $z-setting-ff-heading;
+    line-height: $z-setting-lh-heading;
+  }
+
+  header > #{$heading},
+  hgroup > #{$heading} {
+    margin-bottom: 0;
+  }
+
+  header > #{$heading} + p,
+  hgroup > #{$heading} + #{$subheader} {
+    margin-top: 0;
+
+    font-weight: $z-setting-fw-heading;
+
+    @if $sub-fs {
+      font-size: $sub-fs;
+    }
+
+    color: var(--body-sub-text);
+  }
+
+  @if $level > 1 {
+    @for $i from 1 to $level {
+      @if $i == 1 {
+        $section: "section";
+      } @else {
+        $section: $section + " > section";
+      }
+    }
+
+    #{$section} > h1 {
+      @include v-rhythm();
+
+      font-size: $fs;
+      font-weight: $z-setting-fw-heading;
+      font-family: $z-setting-ff-heading;
+      line-height: $z-setting-lh-heading;
+    }
+
+    #{$section} > header > h1,
+    #{$section} > hgroup > h1 {
+      @include v-rhythm();
+
+      font-size: $fs;
+      font-weight: $z-setting-fw-heading;
+      font-family: $z-setting-ff-heading;
+      line-height: $z-setting-lh-heading;
+      margin-bottom: 0;
+    }
+
+    #{$section} > header > h1 + p,
+    #{$section} > hgroup > h1 + h2 {
+      margin-top: 0;
+
+      font-weight: $z-setting-fw-heading;
+
+      @if $sub-fs {
+        font-size: $sub-fs;
+      }
+
+      color: var(--body-sub-text);
+    }
+  }
+}

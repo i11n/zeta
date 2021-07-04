@@ -1,0 +1,17 @@
+pre {
+  @include monospace();
+  @include local-slots(
+    (
+      border: divider,
+      bg: sub-bg
+    ),
+    "pre"
+  );
+
+  padding: $z-setting-block-padding;
+
+  overflow: auto;
+
+  border: 1px solid var(--pre-border);
+  background-color: var(--pre-bg);
+}

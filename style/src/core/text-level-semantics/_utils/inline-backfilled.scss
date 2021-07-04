@@ -1,0 +1,7 @@
+@use 'sass:math';
+
+@mixin inline-backfilled {  
+  padding: 0 $z-setting-inline-padding;
+  margin: 0 math.div($z-setting-inline-padding, 2);
+  border-radius: $z-setting-rounded-sm;
+}

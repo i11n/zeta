@@ -1,0 +1,22 @@
+@use 'sass:math';
+
+menu,
+nav ol,
+nav ul {
+  padding: 0;
+  list-style: none;
+  li {
+    list-style-type: none;
+  }
+}
+
+nav ul {
+  content: "";
+  clear: both;
+  display: table;
+
+  & li {
+    padding: 0 math.div($z-setting-block-padding, 2);
+    float: $z-setting-dir;
+  }
+}

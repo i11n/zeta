@@ -1,0 +1,9 @@
+@import "_util/make-heading.scss";
+
+@include make-heading(0, $z-setting-fs-5xl, $z-setting-fs-3xl);
+@include make-heading(1, $z-setting-fs-4xl, $z-setting-fs-xxl);
+@include make-heading(2, $z-setting-fs-3xl, $z-setting-fs-xl);
+@include make-heading(3, $z-setting-fs-xxl, $z-setting-fs-lg);
+@include make-heading(4, $z-setting-fs-xl, $z-setting-fs-md);
+@include make-heading(5, $z-setting-fs-lg, $z-setting-fs-md);
+@include make-heading(6, $z-setting-fs-md, $z-setting-fs-sm);

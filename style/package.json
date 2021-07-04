@@ -1,0 +1,30 @@
+{
+  "name": "@z11/style",
+  "version": "0.0.0",
+  "description": "Base styles for the z11 library.",
+  "author": "Eric L. Bentley <eric.l.bentley@outlook.com>",
+  "homepage": "https://github.com/i11n/zeta#readme",
+  "license": "MIT",
+  "main": "lib/style.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/i11n/zeta.git"
+  },
+  "scripts": {
+    "build": "node ./tasks/build",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/i11n/zeta/issues"
+  },
+  "devDependencies": {
+    "sass": "^1.35.1"
+  }
+}

@@ -1,0 +1,28 @@
+@use "sass:math";
+@import "_util/apply-list-styles.scss";
+
+ol,
+ul {
+  padding: 0;
+  padding-#{$z-setting-dir}: $z-setting-v-rhythm + $z-setting-block-padding;
+
+  & & {
+    margin: 0;
+  }
+}
+
+@include apply-list-styles(ol, $z-setting-list-ol);
+@include apply-list-styles(ul, $z-setting-list-ul);
+
+dt {
+  font-weight: $z-setting-fw-bold;
+  margin-top: math.div($z-setting-v-rhythm, 2);
+}
+
+dt:first-child {
+  margin-top: 0;
+}
+
+dd {
+  margin: 0;
+}

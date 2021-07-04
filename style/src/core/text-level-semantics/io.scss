@@ -1,0 +1,50 @@
+@import "_utils/inline-backfilled.scss";
+
+code,
+samp,
+kbd {
+  @include inline-backfilled();
+}
+
+code,
+samp,
+kbd {
+  font-family: $z-setting-ff-monospace;
+  font-size: $z-setting-fs-sm;
+}
+
+code {
+  @include local-slot(code-text, accent-text);
+
+  color: var(--code-text);
+}
+
+kbd {
+  @include local-slots(
+    (
+      bg: text,
+      text: bg
+    ),
+    kbd
+  );
+  background-color: var(--kbd-bg);
+  color: var(--kbd-text);
+
+  & kbd {
+    font-weight: $z-setting-fw-bold;
+  }
+}
+
+pre {
+  & code,
+  & samp,
+  & kbd {
+    background-color: inherit;
+    color: inherit;
+  }
+}
+
+kbd > samp,
+samp > kbd {
+  font-style: italic;
+}

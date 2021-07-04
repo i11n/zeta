@@ -1,0 +1,9 @@
+@function slot($slot) {
+  $value: get-slot($slot);
+
+  @if $value != $slot {
+    @return unquote("var(--z-" + $slot + ", " + $value + ")");
+  }
+
+  @return $slot;
+}

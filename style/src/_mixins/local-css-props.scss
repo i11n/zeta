@@ -1,0 +1,28 @@
+@mixin local($name, $value) {
+  $local-value: $value;
+  --#{$name}: #{$local-value};
+}
+
+@mixin local-slot($name, $slot) {
+  @include local($name, slot($slot));
+}
+
+@mixin locals($map, $prefix) {
+  @each $name, $value in $map {
+    @if $prefix {
+      $name: $prefix + "-" + $name;
+    }
+
+    @include local($name, $value);
+  }
+}
+
+@mixin local-slots($map, $prefix) {
+  @each $name, $value in $map {
+    @if $prefix {
+      $name: $prefix + "-" + $name;
+    }
+
+    @include local-slot($name, $value);
+  }
+}

@@ -1,0 +1,17 @@
+a[href] {
+  @include local-slot(link-color, actionPrimary);
+  @include local(link-hover-color, darken(get-slot(actionPrimary), 15));
+  @include transition(color);
+
+  &,
+  &:visited,
+  &:link {
+    color: var(--link-color);
+
+    text-decoration: none;
+  }
+
+  &:hover {
+    color: var(--link-hover-color);
+  }
+}

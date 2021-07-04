@@ -1,0 +1,14 @@
+abbr[title] {
+  text-decoration: none;
+  border-bottom: 1px dotted currentColor;
+  cursor: help;
+}
+
+abbr[title] small {
+  text-transform: uppercase;
+}
+
+abbr > a[href] {
+  cursor: help;
+  border-bottom: 1px dotted currentColor;
+}

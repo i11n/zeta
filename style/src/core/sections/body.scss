@@ -1,0 +1,16 @@
+body {
+  line-height: $z-setting-lh-base;
+  text-align: $z-setting-dir;
+
+  @include local-slots(
+    (
+      text: text,
+      bg: bg,
+      "sub-text": sub-text
+    ),
+    "body"
+  );
+
+  background-color: var(--body-bg);
+  color: var(--body-text);
+}

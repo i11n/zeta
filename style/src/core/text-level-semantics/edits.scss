@@ -1,0 +1,64 @@
+@import "_utils/inline-backfilled.scss";
+
+mark,
+ins,
+del {
+  @include inline-backfilled();
+}
+
+s {
+  text-decoration: 0.05rem line-through;
+}
+
+mark {
+  @include locals(
+    (
+      bg: lighten(get-slot(textHighlight), 40),
+      "nested-bg": lighten(get-slot(textHighlight), 30)
+    ),
+    "mark"
+  );
+
+  background-color: var(--mark-bg);
+
+  & mark {
+    border-radius: 0;
+    background-color: var(--mark-nested-bg);
+  }
+}
+
+ins {
+  @include locals(
+    (
+      bg: lighten(get-slot(stateOkay), 40),
+      "nested-bg": lighten(get-slot(stateOkay), 30)
+    ),
+    "ins"
+  );
+
+  background-color: var(--ins-bg);
+  text-decoration: none;
+
+  & ins {
+    border-radius: 0;
+    background-color: var(--ins-nested-bg);
+  }
+}
+
+del {
+  @include locals(
+    (
+      bg: lighten(get-slot(stateError), 40),
+      "nested-bg": lighten(get-slot(stateError), 30)
+    ),
+    "del"
+  );
+
+  background-color: var(--del-bg);
+  text-decoration: none;
+
+  & del {
+    border-radius: 0;
+    background-color: var(--del-nested-bg);
+  }
+}

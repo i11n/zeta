@@ -1,0 +1,28 @@
+blockquote {
+  @include local-slots(
+    (
+      border: divider,
+      text: sub-text
+    ),
+    "blockquote"
+  );
+
+  padding-#{$z-setting-dir}: $z-setting-v-rhythm;
+  border-#{$z-setting-dir}: 2px solid var(--blockquote-border);
+
+  color: var(--blockquote-text);
+}
+
+figure > blockquote + figcaption {
+  padding-#{$z-setting-dir}: $z-setting-v-rhythm;
+
+  @if $z-setting-dir == right {
+    &::after {
+      content: " —";
+    }
+  } @else {
+    &::before {
+      content: "— ";
+    }
+  }
+}

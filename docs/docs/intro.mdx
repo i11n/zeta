@@ -1,0 +1,54 @@
+---
+sidebar_position: 1
+title: Zeta design system
+---
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+
+export const Page = () => {
+  const {siteConfig} = useDocusaurusContext();
+  const {customFields} = siteConfig;
+  const {status} = customFields;
+  return (
+    <section>
+      <hgroup>
+        <h2>Features</h2>
+      </hgroup>
+      <p></p>
+      <hgroup>
+        <h2>Support</h2>
+      </hgroup>
+      <p></p>
+      <hgroup>
+        <h2>z11 roadmap</h2>
+      </hgroup>
+      <table>
+        <thead>
+          <tr>
+            <th>Pattern</th>
+            <th>UX</th>
+            <th>UI</th>
+            <th>Base</th>
+            <th>Web</th>
+            <th>React</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        <tbody>
+          {status.items.map((item, index) => (
+            <tr key={`status-item-${item.name}-${index}`}>
+              <td>{item.name}</td>
+              <td>{item.ux}</td>
+              <td>{item.ui}</td>
+              <td>{item.base}</td>
+              <td>{item.web}</td>
+              <td>{item.react}</td>
+              <td>{item.comment}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
+  )
+}
+
+<Page />

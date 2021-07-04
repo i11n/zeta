@@ -1,0 +1,20 @@
+@mixin apply-list-styles($list-type, $styles) {
+  $joined-selector: " ";
+  $selector: false;
+
+  @if $z-setting-list-fixed {
+    $joined-selector: " > li > ";
+  }
+
+  @each $style in $styles {
+    @if $selector {
+      $selector: $selector + " " + $list-type;
+    } @else {
+      $selector: $list-type;
+    }
+
+    #{$selector} {
+      list-style: $style;
+    }
+  }
+}

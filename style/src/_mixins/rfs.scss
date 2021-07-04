@@ -1,0 +1,7 @@
+@mixin rfs($base, $lg) {
+  font-size: $base;
+
+  @if $z-setting-rfs-enable {
+    font-size: clamp(#{$base}, #{$z-setting-rfs-value}, #{$lg});
+  }
+}

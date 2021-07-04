@@ -1,0 +1,13 @@
+hr {
+  @include local-slots(
+    (
+      bg: divider
+    ),
+    "hr"
+  );
+
+  border: 0;
+  height: 1px;
+
+  background: var(--hr-bg);
+}

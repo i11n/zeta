@@ -1,0 +1,23 @@
+@use "sass:math";
+
+figure {
+  @include v-rhythm(math.div($z-setting-v-rhythm, 2));
+  @include local-slots(
+    (
+      "caption-text": sub-text
+    ),
+    "figure"
+  );
+
+  figcaption {
+    color: var(--figure-caption-text);
+  
+    & a[href] {
+      &,
+      &:visited {
+        color: var(--figure-caption-text);
+        text-decoration: underline;
+      }
+    }
+  }
+}

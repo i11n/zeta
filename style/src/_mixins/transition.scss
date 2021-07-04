@@ -1,0 +1,6 @@
+@mixin transition($props) {
+  transition-duration: $z-setting-ts-duration;
+  transition-timing-function: $z-setting-ts-function;
+  transition-delay: $z-setting-ts-delay;
+  transition-property: $props;
+}

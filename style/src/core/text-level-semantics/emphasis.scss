@@ -1,0 +1,21 @@
+em {
+  @include local-slot(em-text, accent-text);
+
+  color: var(--em-text);
+
+  & em {
+    font-weight: $z-setting-fw-bold;
+
+    & em {
+      font-weight: $z-setting-fw-strong;
+    }
+  }
+}
+
+b {
+  font-weight: $z-setting-fw-bold;
+}
+
+strong {
+  font-weight: $z-setting-fw-strong;
+}

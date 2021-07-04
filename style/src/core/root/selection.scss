@@ -1,0 +1,12 @@
+::selection {
+  @include local-slots(
+    (
+      text: bg,
+      bg: actionPrimary
+    ),
+    "selection"
+  );
+
+  color: var(--selection-text);
+  background-color: var(--selection-bg);
+}

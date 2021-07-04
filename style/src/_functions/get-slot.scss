@@ -1,0 +1,7 @@
+@function get-slot($slot) {
+  @if map-has-key($_z-slots, $slot) {
+    @return map-get($_z-slots, $slot);
+  }
+
+  @return $slot;
+}
